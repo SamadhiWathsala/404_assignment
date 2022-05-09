@@ -12,30 +12,6 @@ class Dashboard extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.blueGrey[900],
-      // appBar: AppBar(
-      //   elevation: 0.0,
-      //   backgroundColor: Colors.blueGrey[900],
-      //   leading: const Padding(
-      //     padding: EdgeInsets.only(left: 5),
-      //     child: CircleAvatar(
-      //       backgroundImage: AssetImage('assets/images/profile.jpg'),
-      //     ),
-      //   ),
-      //   title: SizedBox(
-      //     child: Column(
-      //       crossAxisAlignment: CrossAxisAlignment.start,
-      //       children: const [
-      //       Text('Hi',style: TextStyle(fontWeight: FontWeight.w300),),
-      //       Text('Peter John ,',style: TextStyle(fontWeight: FontWeight.w600))
-      //     ],),
-      //   ),
-      //   actions: [
-      //     IconButton(
-      //         onPressed: (){},
-      //         icon: Icon(Icons.more_vert,size: size.height/20,)
-      //     )
-      //   ],
-      // ),
       body: SizedBox(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +33,7 @@ class Dashboard extends StatelessWidget {
               child: Text('Category',style: Theme.of(context).textTheme.headline5!.copyWith(fontWeight: FontWeight.w400,color: Colors.white),),
             ),
             SizedBox(
-              height: size.height/5,
+              height: size.height/6,
                 child: const Categories()
             ),
             SizedBox(height: size.height/20,),
