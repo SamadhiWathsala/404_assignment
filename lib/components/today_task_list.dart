@@ -35,8 +35,8 @@ class _TodayTaskListState extends State<TodayTaskList> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(vertical: size.height/30,horizontal: size.width/15),
-            child: Text('Today task list',style: Theme.of(context).textTheme.headline5,),
+            padding: EdgeInsets.only(left: size.width/20,top: size.height/20),
+            child: Text('Today task list',style: Theme.of(context).textTheme.headline5!.copyWith(fontWeight: FontWeight.w500),),
           ),
           Expanded(
             child: FutureBuilder<List<ToDo>>(
@@ -52,22 +52,32 @@ class _TodayTaskListState extends State<TodayTaskList> {
                               backgroundColor: Colors.primaries[Random().nextInt(Colors.primaries.length)],
                               child: const Icon(Icons.child_friendly_outlined,color: Colors.white,),
                             ),
-                            title: Text(todo.title,style: const TextStyle(fontWeight: FontWeight.w500),),
+                            title: Text(todo.title,style: const TextStyle(fontWeight: FontWeight.w500,fontSize: 18),),
                             subtitle: todo.status ? const Text('completed') : const Text('todo'),
-                            trailing: todo.status ?
-                            InkWell(
-                                onTap: (){
-                                  Provider.of<ToDoStatusNotifier>(context, listen: false).updateStatus(todo.todoId);
-                                },
-                                child: Icon(Icons.star,color: Colors.green[400] )
-                            ) :
-                            InkWell(
-                                onTap: (){
-                                  setState(() {
-                                    Provider.of<ToDoStatusNotifier>(context, listen: false).updateStatus(todo.todoId);
-                                  });
-                                },
-                                child: Icon(Icons.star_outline_outlined,color: Colors.grey[400] )
+                            // trailing: todo.status ?
+                            // InkWell(
+                            //     onTap: (){
+                            //       Provider.of<ToDoStatusNotifier>(context, listen: false).updateStatus(todo.todoId);
+                            //     },
+                            //     child: Icon(Icons.star,color: Colors.green[400] )
+                            // ) :
+                            // InkWell(
+                            //     onTap: (){
+                            //       setState(() {
+                            //         Provider.of<ToDoStatusNotifier>(context, listen: false).updateStatus(todo.todoId);
+                            //       });
+                            //     },
+                            //     child: Icon(Icons.star_outline_outlined,color: Colors.grey[400] )
+                            // ),
+                            trailing: Radio(
+                              focusColor: Colors.green,
+                              value: 1,
+                              groupValue: todo.status,
+                              onChanged: (value) {
+                                setState(() {
+                                  todo.status = !todo.status;
+                                });
+                              },
                             ),
                           );
                         }

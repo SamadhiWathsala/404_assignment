@@ -16,7 +16,7 @@ class Categories extends StatelessWidget {
       width: size.width,
       height: size.height/5,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: size.width/30),
+        padding: EdgeInsets.symmetric(horizontal: size.width/20),
         child: Row(
           children: [
             Expanded(
@@ -39,13 +39,19 @@ class Categories extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(categoriesDetail[index].icon,color: Colors.white,size: size.width/12,),
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: size.width/50),
+                          child: Icon(categoriesDetail[index].icon,color: Colors.white,size: size.width/12,),
+                        ),
                         const Expanded(
-                            child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
+                            child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing '
                             ,style: TextStyle(color: Colors.white),
                             )
                         ),
-                        const Icon(Icons.add,color: Colors.white,)
+                        Padding(
+                          padding: EdgeInsets.only(bottom: size.width/50),
+                          child: const Icon(Icons.add,color: Colors.white,),
+                        )
                       ],
                     ),
                   ),
