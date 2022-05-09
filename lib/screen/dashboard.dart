@@ -10,9 +10,10 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.blueGrey[900],
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        elevation: 0.0,
+        backgroundColor: Colors.blueGrey[900],
         leading: const Padding(
           padding: EdgeInsets.only(left: 5),
           child: CircleAvatar(

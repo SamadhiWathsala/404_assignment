@@ -63,7 +63,9 @@ class _TodayTaskListState extends State<TodayTaskList> {
                             ) :
                             InkWell(
                                 onTap: (){
-                                  Provider.of<ToDoStatusNotifier>(context, listen: false).updateStatus(todo.todoId);
+                                  setState(() {
+                                    Provider.of<ToDoStatusNotifier>(context, listen: false).updateStatus(todo.todoId);
+                                  });
                                 },
                                 child: Icon(Icons.star_outline_outlined,color: Colors.grey[400] )
                             ),
