@@ -69,11 +69,13 @@ class _TodayTaskListState extends State<TodayTaskList> {
                             //     },
                             //     child: Icon(Icons.star_outline_outlined,color: Colors.grey[400] )
                             // ),
-                            trailing: Radio(
-                              focusColor: Colors.green,
-                              value: 1,
-                              groupValue: todo.status,
-                              onChanged: (value) {
+
+                            trailing: Checkbox(
+                              checkColor: Colors.white,
+                              fillColor: MaterialStateProperty.all(Colors.green),
+                              value: todo.status,
+                              shape: const CircleBorder(),
+                              onChanged: (bool? value) {
                                 setState(() {
                                   todo.status = !todo.status;
                                 });

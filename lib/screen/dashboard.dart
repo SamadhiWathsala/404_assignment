@@ -44,10 +44,10 @@ class Dashboard extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: size.height/25,left: size.width/20,right: size.width/20),
               child: TextFormField(
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.start,
                 obscureText: true,
                 decoration: const InputDecoration(
-                  labelText: 'Search',
+                  hintText: 'Search',
                   prefixIcon: Icon(Icons.search),
                 ),
               ),
